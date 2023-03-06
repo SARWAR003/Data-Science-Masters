@@ -1,0 +1,71 @@
+INFO:root:this is info log
+ERROR:root:this is error
+CRITICAL:root:this is critical log
+WARNING:root:this is warning log
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+ERROR:root:this is error
+CRITICAL:root:this is critical log
+WARNING:root:this is warning log
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+ERROR:root:this is error
+CRITICAL:root:this is critical log
+WARNING:root:this is warning log
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+ERROR:root:this is error
+CRITICAL:root:this is critical log
+WARNING:root:this is warning log
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+ERROR:root:this is error
+CRITICAL:root:this is critical log
+WARNING:root:this is warning log
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+ERROR:root:this is error
+CRITICAL:root:this is critical log
+WARNING:root:this is warning log
+INFO:root:this is info log
+WARNING:root:this is my warning
+ERROR:root:this is my error
+INFO:root:this is info log
+ERROR:root:this is error
+CRITICAL:root:this is critical log
+WARNING:root:this is warning log
+INFO:root:this is info log
+ERROR:root:this is error
+CRITICAL:root:this is critical log
+WARNING:root:this is warning log
