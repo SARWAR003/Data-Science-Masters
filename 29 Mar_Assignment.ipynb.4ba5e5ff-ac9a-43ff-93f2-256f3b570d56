@@ -1,0 +1,467 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "9ac740df-8157-4657-8c98-e61ed7284551",
+   "metadata": {},
+   "source": [
+    "## 1."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b28b498f-8308-4dc2-afe2-b9c7e71da51e",
+   "metadata": {},
+   "source": [
+    "Lasso Regression, also known as L1 regularization, is a linear regression technique that adds a penalty term to the cost function by taking the absolute values of the coefficients. This penalty encourages the model to shrink the coefficients towards zero, effectively performing feature selection by setting some coefficients to exactly zero. \n",
+    "\n",
+    "Here are some key differences between Lasso Regression and other regression techniques:\n",
+    "\n",
+    "1. **Feature selection:** \n",
+    "\n",
+    "Lasso Regression performs automatic feature selection by driving some coefficients to zero. This means that Lasso can effectively select the most relevant features and ignore the less important ones, leading to a more interpretable and sparse model.\n",
+    "\n",
+    "2. **Sparse solutions:**\n",
+    "\n",
+    "Due to the feature selection property, Lasso Regression often produces sparse solutions, meaning that it sets many coefficients to zero. This can be beneficial when dealing with high-dimensional datasets with a large number of features, as it helps to reduce the model's complexity and improve its generalization.\n",
+    "\n",
+    "3. **Bias-variance trade-off:**\n",
+    "\n",
+    "Lasso Regression introduces a bias in the estimated coefficients to achieve the feature selection. This bias can be helpful in reducing the model's variance, especially when there are many correlated features. Other regression techniques like Ordinary Least Squares (OLS) do not introduce this bias.\n",
+    "\n",
+    "4. **L1 regularization:** \n",
+    "\n",
+    "Lasso Regression uses L1 regularization, which adds the absolute values of the coefficients to the cost function. This encourages sparsity and results in a more parsimonious model. In contrast, other regression techniques like Ridge Regression use L2 regularization, which adds the squared values of the coefficients.\n",
+    "\n",
+    "5. **Robustness to multicollinearity:**\n",
+    "\n",
+    "Lasso Regression is known to be robust to multicollinearity, which is the presence of strong correlations among the predictor variables. It can effectively handle situations where there are highly correlated features and select only one of them while setting the others to zero. \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e1ca4d50-8f7e-491e-97e6-f94c18d1d28f",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bceadb54-b817-4592-8c87-7e266f9cbe69",
+   "metadata": {},
+   "source": [
+    "## 2."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fcb7c915-2390-4189-8363-de1f303c394d",
+   "metadata": {},
+   "source": [
+    "The main advantage of using Lasso Regression in feature selection is its ability to automatically identify and select the most relevant features from a large set of predictors. This feature selection process offers several benefits:\n",
+    "\n",
+    "1. **Improved interpretability:** \n",
+    "\n",
+    "Lasso Regression produces sparse models by setting some coefficients to exactly zero. This means that the selected features have non-zero coefficients, indicating their importance in predicting the target variable.\n",
+    "\n",
+    "2. **Reduced overfitting:**\n",
+    "\n",
+    "By shrinking some coefficients to zero, Lasso Regression helps to reduce the complexity of the model. This can be particularly useful when dealing with high-dimensional datasets where the number of features is large compared to the number of observations.\n",
+    "\n",
+    "3. **Enhanced model performance:**\n",
+    "\n",
+    "Feature selection with Lasso Regression can improve the predictive performance of the model by focusing on the most informative features. By excluding irrelevant or redundant features, the model can better capture the underlying relationships in the data and make more accurate predictions.\n",
+    "\n",
+    "4. **Computational efficiency:** \n",
+    "\n",
+    "Lasso Regression's feature selection process can significantly reduce the computational burden. By setting coefficients to zero, Lasso effectively eliminates the corresponding features from the model.\n",
+    "\n",
+    "5. **Handles multicollinearity:**\n",
+    "\n",
+    "Lasso Regression is known for its ability to handle multicollinearity, which is the presence of strong correlations among the predictor variables. When faced with highly correlated features, Lasso Regression tends to select one feature from the correlated group while setting the coefficients of the others to zero. \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5d9a08f7-888d-4c6d-8f23-28bbb2309587",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "437f41e8-9249-453e-b1fb-0fbb6ac70d37",
+   "metadata": {},
+   "source": [
+    "## 3."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9a187a09-22fb-4f43-8c9c-4e32c3b93ca2",
+   "metadata": {},
+   "source": [
+    "When interpreting the coefficients of a Lasso Regression model, there are a few key points to consider:\n",
+    "\n",
+    "1. **Magnitude**:\n",
+    "\n",
+    "The magnitude of the coefficient indicates the strength of the relationship between the corresponding feature and the target variable. A larger coefficient suggests a stronger influence, while a smaller coefficient suggests a weaker influence.\n",
+    "\n",
+    "2. **Sign**:\n",
+    "\n",
+    "The sign of the coefficient (+ or -) indicates the direction of the relationship between the feature and the target variable. A positive coefficient suggests a positive relationship, meaning that as the feature increases, the target variable tends to increase as well.\n",
+    "\n",
+    "3. **Zero coefficient**:\n",
+    "\n",
+    "In Lasso Regression, some coefficients may be exactly zero. This indicates that the corresponding feature has been excluded from the model as it is deemed less relevant for predicting the target variable. Zero coefficients imply that the feature does not contribute to the prediction, and it can be considered as effectively removed from the model.\n",
+    "\n",
+    "4. **Relative magnitude**: \n",
+    "\n",
+    "When comparing the magnitudes of coefficients, it's important to consider their relative values. A larger coefficient does not necessarily imply a stronger impact if the corresponding feature has a different scale or unit of measurement.\n",
+    "\n",
+    "5. **Interactions and nonlinear effects**:\n",
+    "\n",
+    "Lasso Regression assumes a linear relationship between the features and the target variable. However, it is possible for interactions or nonlinear effects to exist. In such cases, interpreting individual coefficients in isolation may not provide a complete understanding of the relationship.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3c55220f-ac9a-4016-b47d-507ffe0cfc88",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cabad181-c3e0-49dc-a40c-7ba55adcf174",
+   "metadata": {},
+   "source": [
+    "## 4."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "29bb05f7-d090-45ac-ae45-61c98686f8c9",
+   "metadata": {},
+   "source": [
+    "In Lasso Regression, there is one primary tuning parameter that can be adjusted: the regularization parameter (often denoted as \"alpha\" or \"λ\"). The regularization parameter controls the amount of regularization applied in the model. By adjusting the regularization parameter, you can influence the model's performance and behavior. \n",
+    "\n",
+    "When tuning the regularization parameter in Lasso Regression, there are a few key considerations:\n",
+    "\n",
+    "1. **Alpha value**:\n",
+    "\n",
+    "The regularization parameter (alpha) controls the trade-off between the model's complexity and its ability to fit the training data. A higher alpha value increases the amount of regularization, leading to more coefficients being pushed towards zero and a simpler model. \n",
+    "\n",
+    "2. **Impact on sparsity**:\n",
+    "\n",
+    "One of the main advantages of Lasso Regression is its ability to perform feature selection by driving some coefficients exactly to zero. Increasing the alpha value tends to increase sparsity by shrinking more coefficients to zero. This can be beneficial when dealing with high-dimensional datasets or when there is a suspicion that many features are irrelevant or redundant. \n",
+    "\n",
+    "3. **Model flexibility and overfitting**:\n",
+    "\n",
+    "Higher alpha values introduce more regularization, which can help prevent overfitting by reducing the model's complexity. This is particularly useful when the dataset is small or when there is a high risk of overfitting due to a large number of features or noisy data.\n",
+    "\n",
+    "4. **Model interpretability**\n",
+    "\n",
+    ": The regularization parameter affects the interpretability of the model. As the alpha value increases, more coefficients are pushed to zero, resulting in a sparser model with a smaller number of features. This can make the model more interpretable by focusing on the most important predictors.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a13f5fbf-d49a-4449-8cdd-fcee34e07f0b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2e6a7ebf-7527-46c7-b746-9bdf065fa4f6",
+   "metadata": {},
+   "source": [
+    "## 5."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b609e28d-bfa7-4087-9a83-3b58559b808c",
+   "metadata": {},
+   "source": [
+    "Lasso Regression is primarily designed for linear regression problems, where the relationship between the predictors and the target variable is assumed to be linear. However, Lasso Regression can also be extended to handle non-linear regression problems through the use of basis functions or by combining it with other techniques.\n",
+    "\n",
+    "* One approach to using Lasso Regression for non-linear regression is by transforming the original predictors into a higher-dimensional space using basis functions. Basis functions are functions that transform the input features into a new set of features, allowing for non-linear relationships to be captured. By applying basis functions to the predictors and then performing Lasso Regression on the transformed data, it becomes possible to model non-linear relationships.\n",
+    "\n",
+    " * Example, you can use polynomial basis functions to capture non-linear relationships in Lasso Regression. By including polynomial terms of the original predictors (e.g., quadratic or cubic terms), you can introduce non-linear features into the model. The Lasso Regression algorithm will then estimate the coefficients for these transformed features, allowing for non-linear relationships to be modeled.\n",
+    "\n",
+    "* Another approach is to combine Lasso Regression with other non-linear regression techniques, such as kernel regression or Gaussian processes. In this case, Lasso Regression is used to select relevant features or perform feature selection, while the non-linear regression technique is used to model the non-linear relationship between the selected features and the target variable.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e5d68619-fb81-4268-b69c-3ab956e0ace7",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "10eeb387-a8b6-4db8-884e-e10dfc1f2ef0",
+   "metadata": {},
+   "source": [
+    "## 6."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a9239677-fa6b-4ea8-8ab2-253bb6bca0e1",
+   "metadata": {},
+   "source": [
+    "Ridge Regression and Lasso Regression are both regularization techniques used in linear regression to address the problem of multicollinearity and prevent overfitting. However, they differ in their approach to regularization and the type of penalty they impose on the regression coefficients.\n",
+    "\n",
+    "The main differences between Ridge Regression and Lasso Regression are:\n",
+    "\n",
+    "1. Penalty term:\n",
+    "\n",
+    "   - Ridge Regression adds a penalty term that is proportional to the sum of squared magnitudes of the coefficients (L2 regularization). It shrinks the coefficients towards zero, but they don't become exactly zero.\n",
+    "   - Lasso Regression adds a penalty term that is proportional to the sum of absolute magnitudes of the coefficients (L1 regularization). It not only shrinks the coefficients but also performs automatic feature selection by driving some coefficients to exactly zero.\n",
+    "\n",
+    "2. Effect on coefficients:\n",
+    "\n",
+    "   - In Ridge Regression, as the penalty term increases, the coefficients are reduced towards zero, but they are unlikely to be exactly zero. Ridge Regression retains all the predictors in the model and reduces their impact.\n",
+    "   - In Lasso Regression, the penalty term can drive some coefficients to exactly zero, effectively performing feature selection. Lasso Regression tends to produce sparse models by eliminating irrelevant predictors.\n",
+    "\n",
+    "3. Solution stability:\n",
+    "\n",
+    "   - Ridge Regression tends to have more stable solutions compared to Lasso Regression because it doesn't eliminate any predictors entirely. It is suitable when there are many predictors with potential importance.\n",
+    "   - Lasso Regression can have unstable solutions, especially when there are highly correlated predictors. It tends to select one predictor among highly correlated predictors and discard the others.\n",
+    "\n",
+    "4. Interpretability:\n",
+    "\n",
+    "   - Ridge Regression retains all the predictors and shrinks their coefficients towards zero without eliminating any of them. It may not provide clear interpretability when dealing with a large number of predictors.\n",
+    "   - Lasso Regression can perform automatic feature selection by driving some coefficients to exactly zero. It can provide a more interpretable model by identifying the most important predictors.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "90366af9-d207-4c05-b06c-38d64e2ebac1",
+   "metadata": {},
+   "source": [
+    "## 7."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6e2724be-5e16-4456-8da5-c20621da5f65",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "cbb56d3f-9cf4-4e7c-b555-c9122af427a2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.linear_model import Lasso\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "from sklearn.metrics import mean_squared_error\n",
+    "import numpy as np\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "d8ac430e-9fed-42cb-b4a1-071944211e61",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Placeholder values for X and y\n",
+    "X = np.array([[1, 2], [3, 4], [5, 6]])\n",
+    "y = np.array([10, 20, 30])\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "71c2e8de-dc74-4c6a-bc9d-5b20fb03ab04",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Split the data into training and test sets\n",
+    "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "e4b53e23-ef83-4c5b-b49b-e3aef0d2d300",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: \"▸\";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: \"▾\";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: \"\";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: \"\";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: \"\";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id=\"sk-container-id-1\" class=\"sk-top-container\"><div class=\"sk-text-repr-fallback\"><pre>Lasso(alpha=0.1)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class=\"sk-container\" hidden><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-1\" type=\"checkbox\" checked><label for=\"sk-estimator-id-1\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">Lasso</label><div class=\"sk-toggleable__content\"><pre>Lasso(alpha=0.1)</pre></div></div></div></div></div>"
+      ],
+      "text/plain": [
+       "Lasso(alpha=0.1)"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Create and fit the Lasso Regression model\n",
+    "lasso = Lasso(alpha=0.1)  \n",
+    "lasso.fit(X_train, y_train)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "dda97c63-e3a9-4ab1-b950-4c2ee00cb9da",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Make predictions on the test set\n",
+    "y_pred = lasso.predict(X_test)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "c53de427-192f-45e8-b71b-2f4b60be2dc7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Mean Squared Error: 0.08999999999999936\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Evaluate the model\n",
+    "mse = mean_squared_error(y_test, y_pred)\n",
+    "print(\"Mean Squared Error:\", mse)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "b8940404-4bf3-4d3a-b6b2-5cdd13add7cf",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Coefficients: [4.9 0. ]\n",
+      "Intercept: 5.399999999999999\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "# Get the coefficients of the Lasso model\n",
+    "coefficients = lasso.coef_\n",
+    "intercept = lasso.intercept_\n",
+    "print(\"Coefficients:\", coefficients)\n",
+    "print(\"Intercept:\", intercept)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7fd6f6ff-a1e2-4ca4-9a13-ebd1a2fbf9f7",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "51da0a74-0a3e-439a-9a94-703d3d9ef001",
+   "metadata": {},
+   "source": [
+    "## 8."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "44ef0f19-f603-4973-b42f-392496a8e006",
+   "metadata": {},
+   "source": [
+    "Choosing the optimal value of the regularization parameter (lambda) in Lasso Regression typically involves using techniques like cross-validation or grid search. Here's a general approach to find the optimal lambda value:\n",
+    "\n",
+    "1. Split the data:\n",
+    "\n",
+    "Split your dataset into training and validation sets. The training set will be used to train the Lasso Regression model, and the validation set will be used to evaluate the model's performance for different lambda values.\n",
+    "\n",
+    "2. Define the range of lambda values: \n",
+    "\n",
+    "Choose a range of lambda values to explore. It's common to use a logarithmic scale, such as [0.001, 0.01, 0.1, 1, 10, 100], to cover a wide range of regularization strengths.\n",
+    "\n",
+    "3. Train the model:\n",
+    "\n",
+    "For each lambda value in the range, train a Lasso Regression model using the training set. \n",
+    "\n",
+    "4. Evaluate the model:\n",
+    "\n",
+    "Evaluate the performance of each model using the validation set. One common metric is the mean squared error (MSE), but you can also consider other metrics like R-squared or mean absolute error (MAE).\n",
+    "\n",
+    "5. Select the optimal lambda:\n",
+    "\n",
+    "Choose the lambda value that results in the best performance on the validation set. This can be the lambda value that minimizes the MSE or maximizes the R-squared, depending on the evaluation metric you're using.\n",
+    "\n",
+    "6. Optional:\n",
+    "\n",
+    "Fine-tune the lambda value: If you want to refine the lambda value further, you can perform a more detailed search around the optimal value. For example, you can use a narrower range of lambda values and perform a grid search or use more sophisticated optimization techniques like Bayesian optimization.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8a5f55c2-94d7-4602-84b5-a817223a4f00",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
